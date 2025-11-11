@@ -58,17 +58,13 @@
                 <h3 class="section-title">SPONSORS</h3>
                 <div class="sponsors-slider">
                     <div class="slider-track">
-                        <div class="slide"><a href="https://www.nasa.gov/" target="_blank" rel="noopener noreferrer"><img src="images/nasasponsor1.png" alt="Nasa Sponsor"></a></div>
-                        <div class="slide"><a href="#" target="_blank" rel="noopener noreferrer"><img src="images/dunnlumbersponsor.png" alt="Dunn Sponsor"></a></div>
-                        <div class="slide"><a href="https://www.boeing.com/" target="_blank" rel="noopener noreferrer"><img src="images/boeingsponsor.png" alt="Boeing Sponsor"></a></div>
-                        <div class="slide"><a href="https://www.firstinspires.org/" target="_blank" rel="noopener noreferrer"><img src="images/firstrobosponsor.png" alt="First Robotics Sponsor"></a></div>
-                        <div class="slide"><a href="https://www.fluke.com/" target="_blank" rel="noopener noreferrer"><img src="images/flukesponsor.png" alt="Fluke Sponsor"></a></div>
-
-                        <div class="slide"><a href="https://www.nasa.gov/" target="_blank" rel="noopener noreferrer"><img src="images/nasasponsor1.png" alt="Nasa Sponsor"></a></div>
-                        <div class="slide"><a href="#" target="_blank" rel="noopener noreferrer"><img src="images/dunnlumbersponsor.png" alt="Dunn Sponsor"></a></div>
-                        <div class="slide"><a href="https://www.boeing.com/" target="_blank" rel="noopener noreferrer"><img src="images/boeingsponsor.png" alt="Boeing Sponsor"></a></div>
-                        <div class="slide"><a href="https://www.firstinspires.org/" target="_blank" rel="noopener noreferrer"><img src="images/firstrobosponsor.png" alt="First Robotics Sponsor"></a></div>
-                        <div class="slide"><a href="https://www.fluke.com/" target="_blank" rel="noopener noreferrer"><img src="images/flukesponsor.png" alt="Fluke Sponsor"></a></div>
+                        <?kt (sponsors as List<Map<String, Any? >>).joinToString("") { sponsor ->
+                            "div"("class" to "slide") {
+                                "a"("href" to sponsor["url"]) {
+                                    "img"("src" to sponsor["image"], "alt" to sponsor["name"]) {}
+                                }
+                            }
+                        } ?>
                     </div>
                 </div>
             </section>
