@@ -24,6 +24,10 @@ body {
     min-height: 100vh;
 }
 
+html, body {
+    overflow-x: hidden; 
+    width: 100%;
+}
 .content-wrap {
     flex: 1;
 }
@@ -524,13 +528,80 @@ main.site-content {
 }
 
 
-@media (max-width: 600px) {
-    .member-list {
-        column-count: 1;
+@media (max-width: 900px) {
+    .header-container, .footer-container, main.site-content {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .site-nav {
+        display: flex;
+        flex-direction: column; 
+        width: 100%;
+        text-align: center;
+        gap: 0; 
+    }
+
+    .site-nav a {
+        display: block;
+        width: 100%;
+        padding: 1rem 0; 
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+
+    .site-nav a.cta-link {
+        margin-left: 0;
+        width: 100%;
+        border: none;
+        border-radius: 0;
+        background-color: transparent;
+        color: var(--text-light);
+    }
+
+
+
+    .hero-right img.robot-image,
+    .about-image img,
+    .feature-image img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+
+
+    .hero-section, 
+    .about-section, 
+    .contact-layout,
+    .feature-row,
+    .feature-row.reverse {
+        flex-direction: column;
+        padding: 2rem 1.5rem;
+        gap: 2rem;
+    }
+
+
+    .page-hero h1, .team-hero h1 {
+        font-size: 2.5rem;
+    }
+    .team-number, .team-name {
+        font-size: 2rem;
     }
 }
+}
+
+
+
 
 .team-grid.modal-leads {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     margin-bottom: 2rem;
 }
+
